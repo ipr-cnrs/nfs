@@ -1,0 +1,22 @@
+galaxy_info:
+  author: "Jérémy Gardais"
+  description: "Manage NFS (client/server) installation and configuration"
+  license: WTFPL
+  company: IPR
+  issue_tracker_url: https://git.ipr.univ-rennes1.fr/cellinfo/ansible.nfs/issues
+  min_ansible_version: 2.2
+  platforms:
+  - name: Debian
+    versions:
+    - stretch
+  #- name: opensuse
+  #  versions:
+  #  - all
+  #  - 12.1
+  #  - 12.2
+  #  - 12.3
+  #  - 13.1
+  #  - 13.2
+  galaxy_tags:
+    - system
+    - nfs
