@@ -27,6 +27,16 @@
     backup: true
   when: nfs_cli_manage
 
+- name: CONFIG nfs-quota
+  template:
+    src: '{{ nfs_quota_conf_tpl }}'
+    dest: '{{ nfs_quota_conf_path }}'
+    owner:  root
+    group:  root
+    mode:   0644
+    backup: true
+  when: nfs_cli_manage
+
 - name: CONFIG add rpcbind services
   blockinfile:
     state: present

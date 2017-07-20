@@ -7,6 +7,9 @@ nfs_cli_pkg_state: 'installed'
 nfs_cli_conf_path: '/etc/default/nfs-common'
 nfs_cli_conf_tpl: 'etc/default/nfs-common.j2'
 
+nfs_quota_conf_path: '/etc/default/quota'
+nfs_quota_conf_tpl: 'etc/default/quota.j2'
+
 # rpcbind
 nfs_rpc_nfsd: '2049'
 nfs_rpc_nfs_cb: '32764'
