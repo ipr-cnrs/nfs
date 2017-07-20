@@ -6,3 +6,12 @@ nfs_cli_manage: true
 nfs_cli_pkg_state: 'installed'
 nfs_cli_conf_path: '/etc/default/nfs-common'
 nfs_cli_conf_tpl: 'etc/default/nfs-common.j2'
+
+# rpcbind
+nfs_rpc_nfsd: '2049'
+nfs_rpc_nfs_cb: '32764'
+nfs_rpc_statd_bc: '32765'
+nfs_rpc_statd: '32766'
+nfs_rpc_mountd: '32767'
+nfs_rpc_lockd: '32768'
+nfs_rpc_quotad: '32769'

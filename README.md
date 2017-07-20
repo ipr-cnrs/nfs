@@ -19,6 +19,13 @@ Manage NFS (client) installation and configuration.
 * **nfs_cli_pkg_state** : State of new `nfs-client` package(s) [default : `installed`].
 * **nfs_cli_conf_path** : Configuration file for `nfs-client` [default : `/etc/default/nfs-common`].
 * **nfs_cli_conf_tpl** : Template used to generate the previous config file [default : `etc/default/nfs-common.j2`].
+* **nfs_rpc_nfsd** : Port used by the NFS server [default : `2049`].
+* **nfs_rpc_nfs_cb** : Port used by RPC callback [default : `32764`].
+* **nfs_rpc_statd_bc** : Port used by RPC statd broadcast [default : `32765`].
+* **nfs_rpc_statd** : Port used by RPC statd listener [default : `32766`].
+* **nfs_rpc_mountd** : Port used by RPC mountd [default : `32767`].
+* **nfs_rpc_lockd** : Port used by RPC nlock manager [default : `32768`].
+* **nfs_rpc_quotad** : Port used by RPC quotad [default : `32769`].
 
 ### OS Specific Variables
 
@@ -41,6 +48,7 @@ Please see default value by Operating System file in [vars][vars directory] dire
 This role will :
 * Install needed packages to provide `nfs-client`.
 * Manage `nfs-client` configuration files.
+* Fix rpcbind ports.
 
 ## Development
 

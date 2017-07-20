@@ -27,4 +27,24 @@
     backup: true
   when: nfs_cli_manage
 
+- name: CONFIG add rpcbind services
+  blockinfile:
+    state: present
+    insertafter: EOF
+    dest: /etc/services
+    marker: "# {mark} add services ANSIBLE ipr-cnrs.nfs"
+    content: |
+      rpc.nfs-cb	{{ nfs_rpc_nfs_cb }}/tcp			# RPC nfs callback
+      rpc.nfs-cb	{{ nfs_rpc_nfs_cb }}/udp			# RPC nfs callback
+      rpc.statd-bc	{{ nfs_rpc_statd_bc }}/tcp			# RPC statd broadcast
+      rpc.statd-bc	{{ nfs_rpc_statd_bc }}/udp			# RPC statd broadcast
+      rpc.statd	{{ nfs_rpc_statd }}/tcp			# RPC statd listen
+      rpc.statd	{{ nfs_rpc_statd }}/udp			# RPC statd listen
+      rpc.mountd	{{ nfs_rpc_mountd }}/tcp			# RPC mountd
+      rpc.mountd	{{ nfs_rpc_mountd }}/udp			# RPC mountd
+      rpc.lockd	{{ nfs_rpc_lockd }}/tcp			# RPC lockd/nlockmgr
+      rpc.lockd	{{ nfs_rpc_lockd }}/udp			# RPC lockd/nlockmgr
+      rpc.quotad	{{ nfs_rpc_quotad }}/tcp			# RPC quotad
+      rpc.quotad	{{ nfs_rpc_quotad }}/udp			# RPC quotad
+  when: nfs_cli_manage
 # }}}
