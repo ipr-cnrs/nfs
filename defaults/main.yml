@@ -1,2 +1,6 @@
 ---
 # defaults file for nfs
+
+# client
+nfs_cli_manage: true
+nfs_cli_pkg_state: 'installed'

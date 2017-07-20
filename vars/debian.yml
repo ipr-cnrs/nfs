@@ -1,0 +1,4 @@
+---
+# vars file for Debian-based distros
+nfs_cli_pkg_list:
+  - nfs-common

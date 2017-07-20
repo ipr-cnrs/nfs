@@ -1,2 +1,18 @@
 ---
 # tasks file for nfs
+
+- name: Load specific OS vars for nfs
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution|lower }}-{{ ansible_distribution_version }}.yml"
+    - "{{ ansible_distribution|lower }}.yml"
+    - "{{ ansible_os_family|lower }}.yml"
+
+# client {{{
+- name: client package
+  package:
+    name: '{{ item }}'
+    state: '{{ nfs_cli_pkg_state }}'
+  with_items:
+    - '{{ nfs_cli_pkg_list }}'
+# }}}

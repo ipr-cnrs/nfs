@@ -11,13 +11,18 @@
 
 ## Overview
 
-Manage NFS.
+Manage NFS (client) installation.
 
 ## Role Variables
+
+* **nfs_cli_manage** : If `nfs-client` should be managed with this role [default : `true`].
+* **nfs_cli_pkg_state** : State of new `nfs-client` package(s) [default : `installed`].
 
 ### OS Specific Variables
 
 Please see default value by Operating System file in [vars][vars directory] directory.
+
+* **nfs_cli_pkg_list** : The list of packages to install to provide `nfs-client`.
 
 ## Example Playbook
 
