@@ -11,12 +11,14 @@
 
 ## Overview
 
-Manage NFS (client) installation.
+Manage NFS (client) installation and configuration.
 
 ## Role Variables
 
 * **nfs_cli_manage** : If `nfs-client` should be managed with this role [default : `true`].
 * **nfs_cli_pkg_state** : State of new `nfs-client` package(s) [default : `installed`].
+* **nfs_cli_conf_path** : Configuration file for `nfs-client` [default : `/etc/default/nfs-common`].
+* **nfs_cli_conf_tpl** : Template used to generate the previous config file [default : `etc/default/nfs-common.j2`].
 
 ### OS Specific Variables
 
@@ -38,6 +40,7 @@ Please see default value by Operating System file in [vars][vars directory] dire
 
 This role will :
 * Install needed packages to provide `nfs-client`.
+* Manage `nfs-client` configuration files.
 
 ## Development
 

@@ -15,4 +15,16 @@
     state: '{{ nfs_cli_pkg_state }}'
   with_items:
     - '{{ nfs_cli_pkg_list }}'
+  when: nfs_cli_manage
+
+- name: CONFIG nfs-client
+  template:
+    src: '{{ nfs_cli_conf_tpl }}'
+    dest: '{{ nfs_cli_conf_path }}'
+    owner:  root
+    group:  root
+    mode:   0644
+    backup: true
+  when: nfs_cli_manage
+
 # }}}
