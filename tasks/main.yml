@@ -1,23 +1,23 @@
 ---
-# tasks file for nfs
+# tasks file for role nfs
 
-- name: Load specific OS vars for nfs
-  include_vars: "{{ item }}"
+- name: load operating system specific variables for nfs 
+  include_vars: "{{ item }}" # includes yml file containing os specific variable, eg "debian.yml" found in role_root/vars
   with_first_found:
     - "{{ ansible_distribution|lower }}-{{ ansible_distribution_version }}.yml"
     - "{{ ansible_distribution|lower }}.yml"
     - "{{ ansible_os_family|lower }}.yml"
 
 # client {{{
-- name: client package
+- name: ensure nfs client package is in the required install state
   package:
-    name: '{{ item }}'
+    name: '{{ item }}'   # TODO: why not simply {{ nfs_cli_pkg_list }} ?
     state: '{{ nfs_cli_pkg_state }}'
   with_items:
     - '{{ nfs_cli_pkg_list }}'
   when: nfs_cli_manage
 
-- name: CONFIG nfs-client
+- name: configure nfs-client
   template:
     src: '{{ nfs_cli_conf_tpl }}'
     dest: '{{ nfs_cli_conf_path }}'
@@ -27,7 +27,7 @@
     backup: true
   when: nfs_cli_manage
 
-- name: CONFIG nfs-quota
+- name: configure nfs-quota
   template:
     src: '{{ nfs_quota_conf_tpl }}'
     dest: '{{ nfs_quota_conf_path }}'
@@ -37,7 +37,7 @@
     backup: true
   when: nfs_cli_manage
 
-- name: CONFIG add rpcbind services
+- name: declare rpcbind ports in /etc/services
   blockinfile:
     state: present
     insertafter: EOF

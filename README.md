@@ -11,7 +11,7 @@
 
 ## Overview
 
-Manage NFS (client) installation and configuration.
+This role manages NFS client installation and configuration using fixed ports.
 
 ## Role Variables
 

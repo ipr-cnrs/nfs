@@ -1,6 +1,6 @@
 galaxy_info:
   author: "Jérémy Gardais"
-  description: "Manage NFS (client/server) installation and configuration"
+  description: "This role manages NFS client installation and configuration using fixed ports"
   license: WTFPL
   company: IPR
   issue_tracker_url: https://git.ipr.univ-rennes1.fr/cellinfo/ansible.nfs/issues
