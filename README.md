@@ -1,4 +1,5 @@
-# NFS
+# NFS - Projet **ARRÊTÉ** au profit de [debops.nfs][debops nfs] et [debops.nfs_server][debops nfs server].
+
 
 1. [Overview](#overview)
 2. [Role Variables](#role-variables)
@@ -76,3 +77,5 @@ Jérémy Gardais
 [nfs github]: https://github.com/ipr-cnrs/nfs
 [wtfpl website]: http://www.wtfpl.net/about/
 [ipr website]: https://ipr.univ-rennes1.fr/
+[debops nfs]: https://github.com/debops/debops/tree/master/ansible/roles/debops.nfs
+[debops nfs server]: https://github.com/debops/debops/tree/master/ansible/roles/debops.nfs_server
